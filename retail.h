@@ -1,16 +1,14 @@
 #pragma once
 #include "product.h"
 
+
 class retail: public product{
-protected:
-    double markup; //надбавка в % на стоимость товара
+private:
+    double markup; ///< надбавка в процентах на стоиость товара
 public:
     explicit retail(double a) : product(), markup(a) {}
+    explicit retail(product* pr, int a) : product(pr), markup(a) {};
     double get_markup();
-    //int sell_a_product(int amount);
-    //void add_wares(int n, int price); //добавление товара на склад(указ. кол-во товара, стоимость)
-    //void change_the_price(int price);
-    //void* change_to_wholesale(int n);
+    double sell_r(int price);
+    void change_the_price(int price);
 };
-
-

@@ -1,25 +1,24 @@
 #pragma once
 #include "product.h"
-#include <map>
+#include "maps.h"
 
 class table{
 private:
-    std::map<int, product*> box; //массив ячеек
+    map<int, product*> box; ///< массив ячеек таблицы
 public:
     table() = default;
-    //void sort_table();
     void add_an_item();
     product* find_by_code(int code);
+    void findp(int k);
     void delete_by_code(int code);
     void print_table();
-    void sell_product(product* del);
+    void sell_product(int index);
+    void print_info(int index);
+    void type(int index);
+    void instore(int index);
+    void adding(int index);
+    void change(int index);
+    void reference();
+    void reference_empty();
+    void change_type(int index);
 };
-
-class warehouse{
-private:
-    table Table;
-public:
-    warehouse() = default;
-};
-
-
